@@ -1,0 +1,86 @@
+{% extends 'shared/header-footer.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <section class="package_header">
+		<div class="container">
+             {% for package in packages %}
+			<div class="row head-content">
+				<div class="col-sm-8 package_image">
+<!--					<img src="{{ package.img.url}}">-->
+                    <ul class="package-details-carousel" id="package-details-carousel">
+							<li class="carousel-image">
+                                <img src="{{ package.img.url}}"/>
+							</li>
+
+							<li class="carousel-image">
+                               <img src="{% static 'img/carou4.jpg' %}"/>
+							</li>
+
+							<li class="carousel-image">
+                                <img src="{{ package.img.url}}"/>
+							</li>
+
+							<li class="carousel-image">
+                                <img src="{{ package.img.url}}"/>
+							</li>
+						</ul>
+						<ul class="package-details-pager">
+							<li><a herf="#"><i class="fa fa-circle" aria-hidden="true"></i></a></li>
+							<li><a herf="#"><i class="fa fa-circle"></i></a></li>
+							<li><a herf="#"><i class="fa fa-circle"></i></a></li>
+							<li><a herf="#"><i class="fa fa-circle"></i></a></li>
+						</ul>
+					</div>
+
+				<div class="col-sm-4 package_button">
+					<h2>Trip Facts</h2>
+					<p> Duration: <h4> {{package.total_days}} </h4></p>
+                    <p> Package Difficulty: <h4>  Moderate </h4></p>
+                    <p> Start From: <h4>  Rs: 955</h4></p>
+
+                    <a href="#"><button type="button" class="btn btn-primary head-btn">Book Now</button></a>
+                    <a href="#"> <button type="button" class="btn btn-success head-btn">Customize My Trip</button></a>
+				</div>
+			</div>
+        </div>
+        <div class="package_heading">
+			<h1>{{package.package_name}} </h1>
+		</div>
+         {% endfor %}
+
+			<ul class="nav nav-pills nav-justified tab-head">
+				<li class="nav-item active"><a href="#overview" class="active" data-toggle="tab">OVERVIEW</a></li>
+				<li class="nav-item"><a href="#itinerary" data-toggle="tab">ITINERARY</a></li>
+				<li class="nav-item"><a href="#trip-facts" data-toggle="tab">TRIP FACTS</a></li>
+				<li class="nav-item"><a href="#cost-info" data-toggle="tab">COST INFO</a></li>
+			</ul>
+
+			<div class="tab-content">
+				<div id="overview" class="tab-pane active">
+					<p>This is overview page Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+				</div>
+				<div id="itinerary" class="tab-pane ">
+					<p>This is itinerary page </p>
+				</div>
+				<div id="trip-facts" class="tab-pane">
+					<p>This is trip facts page </p>
+				</div>
+				<div id="cost-info" class="tab-pane">
+					<p>This is cost info page </p>
+				</div>
+			</div>
+		</div>
+
+
+
+
+	</section>
+{% endblock %}

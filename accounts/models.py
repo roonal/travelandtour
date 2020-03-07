@@ -22,7 +22,4 @@ class BookingRequest(models.Model):
     payment_mode = models.CharField(max_length=20)
 
 
-class Booking(ModelForm):
-    class Meta:
-        model = BookingRequest
-        exclude = ('request_id',)
+

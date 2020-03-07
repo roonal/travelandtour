@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from .models import BookingRequest
 
 
 class SignUpForm(UserCreationForm):
@@ -44,3 +45,7 @@ class BookingForm(forms.Form):
     payment_mode = forms.CharField(max_length=20)
 
 
+class Booking(forms.ModelForm):
+    class Meta:
+        model = BookingRequest
+        exclude = ('request_id',)

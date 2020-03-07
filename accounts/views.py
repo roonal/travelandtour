@@ -3,8 +3,8 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from .forms import SignUpForm, BookingForm
-from .models import BookingRequest, Booking
+from .forms import SignUpForm, BookingForm, Booking
+from .models import BookingRequest
 from django.contrib import messages
 from .forms import BookingForm
 
@@ -59,7 +59,8 @@ def package_booking(request):
 def booking_request(request):
     # if request.method == 'POST':
 
-        # req = BookingForm(request.POST)
+        # req = Booking(request.POST)
+        # req.save()
 
         # if req.is_valid():
 

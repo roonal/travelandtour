@@ -26,3 +26,14 @@ def package_booking(request):
 
 
 
+def package_details_final(request, pk):
+    context = {'packages': Packages.objects.filter(package_id=pk),
+               'difficulty': Difficulty.objects.filter(difficulty_id=pk),
+               'destination': Destination.objects.filter(package_destination=pk),
+               'package_plan': PackagePlan.objects.filter(package_id=pk),
+               'day': PackagePlan.objects.filter(package_id=pk),
+               'activities': PackageActivities.objects.filter(package_id=pk),
+               'travel_mode': ActivitiesTravelMode.objects.filter(package_id=pk)
+
+               }
+    return render(request, 'user/package_details_final.html', context)

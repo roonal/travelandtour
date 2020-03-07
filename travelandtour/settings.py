@@ -25,6 +25,9 @@ SECRET_KEY = '+#jk2xke^+phoe5t)q#8d0wi!pmex%qea-l(_)*(-0ow46o#jm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
 ALLOWED_HOSTS = []
 
 
@@ -131,3 +134,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'ronalniraula99@gmail.com' #Your email id
+# EMAIL_HOST_PASSWORD = 'urtrwoopmwvbeefu'  # your password
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# DEFAULT_FROM_EMAIL = 'ronalniraula99@gmail.com'

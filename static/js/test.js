@@ -130,6 +130,33 @@ jQuery(document).ready(function(){
 	});
 
 
+/** this function is for package details image slider configuration  **/
+
+	$('.package-details-carousel').carouFredSel({
+		responsive: true,
+		width: '100%',
+		circular: true,
+		pagination:{
+			container:".package-details-pager",
+			anchorBuilder: false
+		},
+		scroll:{
+			items: 1,
+			duration: 500,
+			pauseOnHover: true
+		},
+		auto: true,
+		items: {
+			visible:{
+				min:1, /**only 1 item to be visible at a time **/
+				max:1
+			},
+		height: "variable"
+		}
+
+	});
+
+
 /** this function automatically executes while window scroll and change the color of the nav bar **/
 
 	$(window).scroll(function(){
